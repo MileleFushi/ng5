@@ -1,0 +1,16 @@
+@import "../local/colors.variables.scss";
+@import "../global/fonts.scss";
+
+div.container{
+    display: inline-grid;
+    width: 40%;
+    min-height: 200px;
+    margin: 25px auto 50px auto;
+    background-color: $item;
+}
+
+span, p{
+    font-family: $font-paragraph;
+    color: $paragraph;
+    font-size: 1.3em;
+}

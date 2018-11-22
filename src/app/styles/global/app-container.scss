@@ -1,0 +1,9 @@
+@import "../local/colors.variables.scss";
+
+div#todo-app-container{
+    display: block;
+    width: 60%;
+    margin: 5% auto auto auto;
+    background-color: $main;
+    text-align: center;
+}

@@ -1,0 +1,53 @@
+@import "../local/colors.variables.scss";
+@import "../global/fonts.scss";
+
+form{
+    input[type=text]{
+        width: 380px;
+        height: 100px;
+        background-color: $input;
+        border: 1px solid $main;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: $paragraph;
+        font-size: 1.2em;
+
+        &:focus{
+            background-color: $header;
+        }
+    }
+    span{
+        float: left;
+        margin-left: 40px;
+    }
+    input[type=date]{
+        float: left;
+        height: 25px;
+        width: 150px;
+        margin: 0px 100px 10px 10px;
+        font-family: $paragraph;
+        font-size: 1.2em;
+        background-color: $input;
+        border: 1px solid $main;
+
+        &:focus{
+            background-color: $header;
+        }
+    }
+    input[type=submit]{
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: $button;
+        width: 100px;
+        height: 50px;
+        font-size: 1.3em;
+        font-family: $paragraph;
+        border: 1px solid $main;
+
+        &:focus{
+            background-color: $label;
+        }
+    }
+}
