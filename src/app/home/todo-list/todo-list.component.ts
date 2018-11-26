@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  constructor() { }
+  dataList = new Array();
+
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.dataListService.subscribe(dataList => this.dataList = dataList)
   }
 
 }

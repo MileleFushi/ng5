@@ -1,6 +1,6 @@
 <ul id="todo-list">
-  <li class="todo-list-item">
-    <p class="todo-list-subject">Static list item</p>
-    <p class="todo-list-expdate">01.01.2018</p>
+  <li class="todo-list-item" *ngFor="let data of dataList">
+    <p class="todo-list-subject">{{data[0]}}</p>
+    <p class="todo-list-expdate">{{data[1]}}</p>
   </li>
 </ul>

@@ -1,6 +1,6 @@
 <form>
-  <input type="text" name="subject" placeholder="Type your thing to do..."><br>
+  <input type="text" name="subject" placeholder="Type your thing to do..." [(ngModel)]="subjectContent"><br>
   <span>Expire date: </span>
-  <input type="date" name="expire-date"><br>
-  <input type="submit" value="Submit">
+  <input type="date" name="expire-date" [(ngModel)]="expdateContent"><br>
+  <input type="submit" value="Submit" (click)="addSubject()">
 </form>
