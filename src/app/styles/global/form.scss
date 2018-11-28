@@ -12,6 +12,7 @@ form{
         margin-bottom: 20px;
         font-family: $paragraph;
         font-size: 1.2em;
+        border-radius: 3px;
 
         &:focus{
             background-color: $header;
@@ -30,6 +31,7 @@ form{
         font-size: 1.2em;
         background-color: $input;
         border: 1px solid $main;
+        border-radius: 3px;
 
         &:focus{
             background-color: $header;
@@ -45,6 +47,7 @@ form{
         font-size: 1.3em;
         font-family: $paragraph;
         border: 1px solid $main;
+        border-radius: 3px;
 
         &:focus{
             background-color: $label;

@@ -10,6 +10,7 @@ ul#todo-list{
         background-color: $item-list;
         list-style: none;
         border: 1px solid $main;
+        margin-bottom: 15px;
 
         &odd{
             background-color: $item-list-darker;

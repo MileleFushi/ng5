@@ -8,8 +8,9 @@ import { DataService } from '../../data.service';
 })
 export class TodoFormComponent implements OnInit {
 
-  subjectContent: String;
-  expdateContent: Date;
+  subjectContent = "";
+  today = new Date();
+  expdateContent = this.today.getFullYear() + "-" + (this.today.getMonth() + 1) + "-" + this.today.getDate();
   dataList = new Array();
 
   constructor(private data: DataService) { }
@@ -18,11 +19,31 @@ export class TodoFormComponent implements OnInit {
   }
 
   addSubject(){
-    this.dataList.push([this.subjectContent, this.expdateContent]); //przekazuje
-    this.subjectContent = "";
-    this.expdateContent = new Date();
-    console.log(this.dataList);
+    if(this.subjectContent && this.expdateContent){
+      this.dataList.unshift([this.subjectContent, this.expdateContent]);
+      this.subjectContent = "";
+      this.today = new Date();
+      this.expdateContent = this.today.getFullYear() + "-" + (this.today.getMonth() + 1) + "-" + this.today.getDate();
+      console.log(this.dataList);
 
-    this.data.changeDataList(this.dataList);
+      this.data.changeDataList(this.dataList);
+    }
+    else if(!this.subjectContent && !this.expdateContent){
+      window.alert("EXCEPTION - EMPTY SUBJECT AND DATE");
+      throw("EXCEPTION - EMPTY SUBJECT AND DATE");
+    }
+    else if(!this.subjectContent){
+      window.alert("EXCEPTION - EMPTY SUBJECT");
+      throw("EXCEPTION - EMPTY SUBJECT");
+    }
+    else if(!this.expdateContent){
+      window.alert("EXCEPTION - EMPTY DATE");
+      throw("EXCEPTION - EMPTY DATE");
+    }
+    else{
+      window.alert("EXCEPTION - UNKNOWN ISSUE");
+      throw("EXCEPTION - UNKNOWN ISSUE");
+    }
+    
   }
 }
