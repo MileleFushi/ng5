@@ -19,13 +19,17 @@ export class TodoFormComponent implements OnInit {
   }
 
   addSubject(){
+    
     if(this.subjectContent && this.expdateContent){
+
       this.dataList.unshift([this.subjectContent, this.expdateContent]);
       this.subjectContent = "";
       this.today = new Date();
       this.expdateContent = this.today.getFullYear() + "-" + (this.today.getMonth() + 1) + "-" + this.today.getDate();
-      console.log(this.dataList);
-
+      console.log("ORIG DATES: " + this.dataList);
+      this.dataList.sort((a, b) => b[1] - a[1]);
+      //console.log("SEGR DATES: " + this.dataList[0][1]);
+      //console.log("A: " + a[1] + ", B: " + b[1]);
       this.data.changeDataList(this.dataList);
     }
     else if(!this.subjectContent && !this.expdateContent){
